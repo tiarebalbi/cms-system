@@ -633,7 +633,7 @@ class Interactive_Api_Cpanel {
 
 		// Set the $auth string
 		
-		$authstr;
+		$authstr = NULL;
 		if ( $this->auth_type == 'hash' ) {
 			$authstr = 'Authorization: WHM ' . $this->user . ':' . $this->auth . "\r\n";
 		} elseif ($this->auth_type == 'pass' ) {
