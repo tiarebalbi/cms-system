@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<package xmlns="http://www.zend.com/server/deployment-descriptor/1.0" version="1.0">
+    <name>Interaction System</name>
+    <summary>Sistema gerenciador de aplicações Web</summary>
+    <description>Aplicação web completa, voltada para gerenciamento web</description>
+    <version>
+        <release>1.0.19</release>
+        </version>
+    <icon>docs/1337pwn.png</icon>
+    <eula>docs/licence.txt</eula>
+    <appdir>data</appdir>
+    <docroot>data/public</docroot>
+    <dependencies>
+    <required>
+      <php>
+        <min>5.3</min>
+        <max>6.0</max>
+      </php>
+      <extension>
+        <name>pdo_mysql</name>
+        <equals>1.0.2</equals>
+        <min>5.0.51a</min>
+        </extension>
+      </required>
+  </dependencies>
+</package>

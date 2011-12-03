@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>
+	<nav>
+		<home>
+			<label>Página Inicial</label>
+			<uri>javascript:void(0)</uri>
+			<pages>
+				<dashboard>
+					<label>Dashboard</label>
+					<module>default</module>
+					<controller>index</controller>
+					<action>index</action>
+				</dashboard>
+				<account>
+					<label>Minha Conta</label>
+					<module>default</module>
+					<controller>account</controller>
+					<action>index</action>
+				</account>
+			</pages>
+		</home>
+		<gerenciamento>
+			<label>Gerenciamento de Páginas</label>
+			<uri>javascript:void(0)</uri>
+			
+			<pages>
+				<nova>
+					<label>Criar Nova Página</label>
+					<module>gerenciamento</module>
+					<controller>index</controller>
+					<action>novo</action>
+				</nova>	
+				<lista>
+					<label>Lista de Página(s)</label>
+					<module>gerenciamento</module>
+					<controller>index</controller>
+					<action>index</action>
+				</lista>
+				<config>
+					<label>Configuração do Layout</label>
+					<module>gerenciamento</module>
+					<controller>config</controller>
+					<action>index</action>
+				</config>
+			</pages>
+			
+		</gerenciamento>
+		<webmail>
+			<label>Webmail</label>
+			<uri>javascript:void(0)</uri>
+			<pages>
+				<novaconta>
+					<label>Nova Conta</label>
+					<module>webmail</module>
+					<controller>index</controller>
+					<action>cadastrar</action>
+				</novaconta>
+				<listaconta>
+					<label>Lista de Conta(s)</label>
+					<module>webmail</module>
+					<controller>index</controller>
+					<action>listar</action>
+				</listaconta>
+			</pages>
+		</webmail>
+		<estatistica>
+			<label>Relátorio de Acesso</label>
+			<module>estatisticas</module>
+			<controller>index</controller>
+			<action>index</action>
+		</estatistica>
+		<configuracao>
+			<label>Configurações</label>
+			<uri>javascript:void(0)</uri>
+			
+			<pages>
+			
+				<database>
+					<label>Base de Dados</label>
+					<module>configuracao</module>
+					<controller>database</controller>
+					<action>index</action>
+					
+					<pages>
+						<editar>
+							<label>Editar</label>
+							<module>configuracao</module>
+							<controller>database</controller>
+							<action>editar</action>
+						</editar>
+					</pages>
+					
+				</database>
+				
+				<webmail>
+					<label>cPanel</label>
+					<module>configuracao</module>
+					<controller>webmail</controller>
+					<action>index</action>
+					
+					<pages>
+						<cadastro>
+							<label>Novo Registro</label>
+							<module>configuracao</module>
+							<controller>webmail</controller>
+							<action>cadastrar</action>
+						</cadastro>
+						<editar>
+							<label>Editar</label>
+							<module>configuracao</module>
+							<controller>webmail</controller>
+							<action>editar</action>
+						</editar>
+						<excluir>
+							<label>Excluir</label>
+							<module>configuracao</module>
+							<controller>webmail</controller>
+							<action>excluir</action>
+						</excluir>
+					</pages>
+					
+				</webmail>
+				
+				<usuario>
+					<label>Usuários</label>
+					<module>configuracao</module>
+					<controller>usuarios</controller>
+					<action>index</action>
+					
+					<pages>
+						<cadastro>
+							<label>Novo Registro</label>
+							<module>configuracao</module>
+							<controller>usuarios</controller>
+							<action>cadastrar</action>
+						</cadastro>
+						<editar>
+							<label>Editar</label>
+							<module>configuracao</module>
+							<controller>usuarios</controller>
+							<action>editar</action>
+						</editar>
+						<excluir>
+							<label>Excluir</label>
+							<module>configuracao</module>
+							<controller>usuarios</controller>
+							<action>excluir</action>
+						</excluir>
+					</pages>
+				</usuario>
+				
+				<google>
+					<label>Google Analytics</label>
+					<module>configuracao</module>
+					<controller>analytics</controller>
+					<action>index</action>
+					<pages>
+						<configuracao>
+							<label>Configuração</label>
+							<module>configuracao</module>
+							<controller>analytics</controller>
+							<action>configuracao</action>
+						</configuracao>
+					</pages>
+				</google>
+				
+			</pages>
+			
+		</configuracao>
+	</nav>
+
+</configdata>

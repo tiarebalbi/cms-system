@@ -1,0 +1,25 @@
+<div class="grid_12">
+	<h1>Webmail</h1>
+	<p>Configurações para acesso de API cPanel</p>
+</div>
+<div class="grid_12">
+	<a class="button" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"webmail","action"=>"index"), NULL, true); ?>">Voltar</a>
+</div>
+
+<div class="grid_12">
+	<div class="block-border">
+		<div class="block-header"> <h1>Confirmação de Dados</h1><span></span> </div> 
+		<div class="block-content">
+			<ul class="block-list">
+				<li><span>Host:</span> <?php echo $this->info["host"];?></li>
+				<li><span>Usuário:</span> <?php echo $this->info["usuario"];?></li>
+				<li><span>Porta:</span> <?php echo $this->info["porta"];?></li>
+				<li><span>Tema:</span> <?php echo $this->info["theme"];?></li>
+			</ul>
+			<h3>Você confirma a exclusão deste registro ?</h3>
+			<a class="button" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"webmail","action"=>"excluir","checked"=>true));?>">
+				Sim, confirmo a exclusão
+			</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,53 @@
+<div class="grid_12">
+	<h1>Usuários</h1>
+	<p>Lista de usuários com acesso ao painel administrativo</p>
+</div>
+<div class="grid_12">
+	<?php foreach ($this->notificacao as $msg) :?>
+		<div class="alert success flashMessage"><?php echo $msg; ?></div>
+	<?php endforeach;?>
+</div>
+<div class="grid_12">
+	<a class="button" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"usuarios","action"=>"cadastrar")); ?>">Novo Registro</a>
+</div>
+
+<div class="grid_12">
+	<div class="block-border">
+		<div class="block-header"> <h1>Informações</h1><span></span> </div> 
+		<div class="block-content">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>E-Mail</th>
+						<th>Usuário</th>
+						<th>Data de Nascimento</th>
+						<th>Status</th>
+						<th width="120px"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($this->resultado as $valor) :?>
+						<tr>
+							<td><?php echo $valor->id;?></td>
+							<td><?php echo $valor->nome;?></td>
+							<td><?php echo $valor->email;?></td>
+							<td><?php echo $valor->login?></td>
+							<td><?php echo $this->data($valor->nascimento, "dd/MM/yyyy"); ?></td>
+							<td><?php echo ($valor->status == 1 ? "Ativo" :  "Inativo" );?></td>
+							<td>
+								<a class="button-table edit" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"usuarios","action"=>"editar","id"=>$valor->id),NULL, true);?>">
+									Editar
+								</a>
+								<a class="button-table delete" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"usuarios","action"=>"excluir","id"=>$valor->id),NULL, true);?>">
+									Excluir
+								</a>
+							</td>
+						</tr>
+					<?php endforeach;?>					
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

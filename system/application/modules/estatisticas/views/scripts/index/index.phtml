@@ -1,0 +1,75 @@
+<div class="grid_12">
+	<h1>Relátorio de Acesso</h1>
+	<p>Informações completas de acesso ao seu site</p>
+</div>
+<script type="text/javascript">
+$(function() {
+	globalView.addSeries({
+		name: 'Visitas',
+	    data: [<?php echo $this->globalResume($this->reportGlobalFeed, "visits");?>]        
+	});	
+	globalView.addSeries({
+		name: 'PageView',
+		data: [<?php echo $this->globalResume($this->reportGlobalFeed, "pageviews");?>]        
+	});	
+	globalView.addSeries({
+		name: 'Novas Visitas',
+		data: [<?php echo $this->globalResume($this->reportGlobalFeed, "newVisits");?>]        
+	});	
+
+	regiaoView.addSeries({
+		type: 'pie',
+		name: 'Cobertura de Acesso',
+		data: [<?php echo $this->regiaoAccess($this->reportRegiaoAccess);?>]        
+	});	
+
+});
+</script>
+
+<div class="grid_12">
+	<div class="block-border">
+		<div class="block-header"> <h1>Visão Global</h1><span></span> </div> 
+		<div class="block-content">
+			<div id="container" style="margin-right: 10px;"></div>
+			
+		</div>
+	</div>
+</div>
+
+<div class="grid_4">
+	<div class="block-border">
+		<div class="block-header"> <h1>Utilização do Site</h1><span></span> </div> 
+		<div class="block-content">
+			<ul class="block-itens">
+				<li>
+					<span><?php echo (empty($this->reportSiteUsage["visits"]) ? 0 : $this->reportSiteUsage["visits"]);?></span> 
+					Visita(s)
+				</li>
+				<li>
+					<span><?php echo (empty($this->reportSiteUsage["pageviews"]) ? 0 : $this->reportSiteUsage["pageviews"]);?></span> 
+					PageView(s)
+				</li>
+				<li>
+					<span><?php echo (empty($this->reportSiteUsage["newVisits"]) ? 0 : $this->reportSiteUsage["newVisits"]);?></span> 
+					Nova(s) Visita(s)
+				</li>
+				<li>
+					<span><?php echo (empty($this->reportSiteUsage["timeSite"]) ? 0 : $this->avgTimeSite($this->reportSiteUsage["timeSite"], $this->reportSiteUsage["visits"])); ?></span> 
+					Tempo Médio por Visita
+				</li>
+				<li>
+					<span><?php echo (empty($this->reportSiteUsage["timePage"]) ? 0 : $this->secondToHour($this->reportSiteUsage["timePage"]));?></span> 
+					Tempo de acesso no Site
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="grid_8">
+	<div class="block-border">
+		<div class="block-header"> <h1>Regiões de Acesso</h1><span></span> </div> 
+		<div class="block-content">
+			<div id="mapa" style="margin-right: 10px;"></div>
+		</div>
+	</div>
+</div>

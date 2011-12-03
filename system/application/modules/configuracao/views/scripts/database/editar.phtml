@@ -1,0 +1,24 @@
+<div class="grid_12">
+	<h1>Base de Dados</h1>
+	<p>Informações configuradas para conexão do seu banco de dados</p>
+</div>
+<div class="grid_12">
+	<div class="alert warning"><b>ATENÇÃO:</b> Caso a sua nova base de dados não tenha o seu backup, será realizado uma nova instalação</div>
+</div>
+<div class="grid_12">
+	<div class="block-border">
+		<div class="block-header"> 
+			<h1>Formulário</h1>
+			<span>
+				<a href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"database","action"=>"index"));?>" class="button">Voltar</a>
+			</span> 
+		</div> 
+		<div class="block-content">
+			<?php if(!empty($this->erroMsg)):?>
+				<div class="alert error"><?php echo $this->erroMsg;?></div>
+			<?php endif;?>
+			
+			<?php echo $this->form; ?>
+		</div>
+	</div>
+</div>

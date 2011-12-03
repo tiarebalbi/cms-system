@@ -1,0 +1,70 @@
+<?php echo $this->doctype();?>
+<html>
+<head>
+	<?php echo $this->headTitle();?>
+	<meta charset=utf-8>
+	<link	href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css' />
+	<?php echo $this->headLink();?>
+	<?php echo $this->headScript()->prependFile($this->baseUrl("js/library/jquery/jquery-1.7.min.js"),'text/javascript');?>
+</head>
+<body>
+	<div id="title">
+		<div id="logo"></div>
+		<div class="divider-header divider-vertical"></div>
+		<div id="options">
+			<ul class="toolbox-header">
+				<li><a class="toolbox-action tooltip" href="javascript:void(0);"
+					title="Minha Conta"><span class="i-24-user-business"></span></a></li>
+				<li><a class="toolbox-action tooltip" href="javascript:void(0);"
+					title="Backup"><span class="i-24-database"></span></a></li>
+			</ul>
+		</div>
+		<div id="user-info">
+			<p>
+				<a href="javascript:void(0);" class="button red">Logout</a>
+			</p>
+		</div>
+	</div>
+	<div id="breadcrumbs">
+
+		<div id="search-bar">
+			<form method="post" onsubmit="return false">
+				<input type="text" name="search" class="text" value="Buscar..." />
+			</form>
+		</div>
+
+		<div id="list-breadcrumbs">
+			<a href="<?php echo $this->url(array("module"=>"default","controller"=>"index","action"=>"index"),NULL, true);?>" 
+			   class="icon-init tooltip"
+			   title="Página Inicial">
+				<span id="bc-home"></span>
+			</a>
+			<div class="bread-itens">
+				<?php echo $this->navigation()->breadcrumbs()->setMinDepth(0)->setLinkLast(true)->setSeparator(" ");?>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="shadow-bottom shadow-titlebar"></div>
+	<div id="sidebar">
+		<div id="login-details">
+			<img class="img-left framed" alt="Hello"
+				src="<?php echo $this->baseUrl("img/misc/avatar_small.png");?>">
+			<h3>Bem Vindo Sr(a):</h3>
+			<p>Tiarê Balbi Bonamini</p>
+		</div>
+		<div id="nav">
+			<?php echo $this->navigation()->menu()->renderMenu(null,array('maxDepth'=>1)); ?>
+			<div class="buscaMenu"></div>
+		</div>
+	</div>
+
+	<div id="main-content">
+		<div class="container_12">
+			<?php echo $this->layout()->content; ?>
+		</div>
+	</div>
+
+</body>
+</html>

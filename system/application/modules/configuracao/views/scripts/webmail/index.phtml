@@ -1,0 +1,51 @@
+<div class="grid_12">
+	<h1>cPanel</h1>
+	<p>Configurações para acesso de API do Webmail</p>
+</div>
+<div class="grid_12">
+	<?php foreach ($this->notificacao as $msg) :?>
+		<div class="alert success flashMessage"><?php echo $msg; ?></div>
+	<?php endforeach;?>
+</div>
+<div class="grid_12">
+	<a class="button" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"webmail","action"=>"cadastrar")); ?>">Novo Servidor</a>
+</div>
+
+<div class="grid_12">
+	<div class="block-border">
+		<div class="block-header"> <h1>Informações</h1><span></span> </div> 
+		<div class="block-content">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Servidor</th>
+						<th>Usuário</th>
+						<th>Porta</th>
+						<th>Tema</th>
+						<th width="120px"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($this->resultado as $valor) :?>
+						<tr>
+							<td><?php echo $valor->id;?></td>
+							<td><?php echo $valor->host;?></td>
+							<td><?php echo $valor->usuario;?></td>
+							<td><?php echo $valor->porta?></td>
+							<td><?php echo $valor->theme?></td>
+							<td>
+								<a class="button-table edit" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"webmail","action"=>"editar","id"=>$valor->id),NULL, true);?>">
+									Editar
+								</a>
+								<a class="button-table delete" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"webmail","action"=>"excluir","id"=>$valor->id),NULL, true);?>">
+									Excluir
+								</a>
+							</td>
+						</tr>
+					<?php endforeach;?>					
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

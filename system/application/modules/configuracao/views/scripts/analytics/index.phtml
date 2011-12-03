@@ -1,0 +1,46 @@
+<div class="grid_12">
+	<h1>Google Analytics</h1>
+	<p>Configurações para integração de relátorios de acesso</p>
+</div>
+<div class="grid_12">
+	<?php foreach ($this->notificacao as $msg) :?>
+		<div class="alert success flashMessage"><?php echo $msg; ?></div>
+	<?php endforeach;?>
+</div>
+<div class="grid_12">
+	<a class="button" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"analytics","action"=>"configuracao")); ?>">Configurar</a>
+</div>
+
+<?php if(!empty($this->resultado)) :?>
+<div class="grid_6">
+	<div class="block-border">
+		<div class="block-header"> <h1>Conta Google</h1><span></span> </div> 
+		<div class="block-content">
+			<?php foreach ($this->resultado as $valor):?>
+			<ul class="block-list">
+				<li><span>Conta:</span> <?php echo $valor->login?></li>
+			</ul>
+			<?php endforeach;?>
+		</div>
+	</div>
+</div>
+<div class="grid_6">
+	<div class="block-border">
+		<div class="block-header"> <h1>Profile Google Analytics</h1><span></span> </div> 
+		<div class="block-content">
+			<?php foreach ($this->resultado as $valor):?>
+			<ul class="block-list">
+				<li><span>Nome:</span> <?php echo $valor->titulo?></li>
+				<li><span>Profile:</span> <?php echo $valor->profile?></li>
+				<li><span>Chave de Web:</span> <?php echo $valor->webProfile?> </li>
+				<li><span>Último Update:</span> <?php echo $this->data($valor->updated, "dd/MM/yyyy HH:mm:ss");?></li>
+			</ul>
+			<?php endforeach;?>
+		</div>
+	</div>
+</div>
+<?php else:?>
+<div class="grid_12">
+	<div class="alert info">Nenhuma Conta Google Analytics configurada</div>
+</div>
+<?php endif;?>
