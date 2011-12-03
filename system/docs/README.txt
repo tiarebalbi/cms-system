@@ -14,13 +14,13 @@ Setting Up Your VHOST
 The following is a sample VHOST you might want to consider for your project.
 
 <VirtualHost *:80>
-   DocumentRoot "/var/www/studioc4/system/public"
+   DocumentRoot "/var/www/apps/cms-system/system/public"
    ServerName system.local
 
    # This should be omitted in the production environment
    SetEnv APPLICATION_ENV development
 
-   <Directory "/var/www/studioc4/system/public">
+   <Directory "/var/www/apps/cms-system/system/public">
        Options Indexes MultiViews FollowSymLinks
        AllowOverride All
        Order allow,deny

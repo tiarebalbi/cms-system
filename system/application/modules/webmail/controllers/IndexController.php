@@ -5,15 +5,20 @@ class Webmail_IndexController extends Zend_Controller_Action
 
     public function init()
     {
-        /* Initialize action controller here */
     }
 
     public function indexAction()
     {
     	
-    	$mapa = new Configuracao_Model_WebmailMapper();
-    	$info = $mapa->consultaLinha(array("id IS NOT NULL"));
+    	$cpanel = new Interactive_Api_Cpanel("hostc4.com.br");
+    	$cpanel->password_auth("rs36315", "481200");
+    	$cpanel->set_output("json");
     	
+    	$cpanel->set_debug(1);
+    	
+    	$info = $cpanel->api2_query("rs36315", "Email", "listpopswithdisk");
+    	
+    	$dados = Zend_Json::decode($info);
     }
 
     public function listarAction()
