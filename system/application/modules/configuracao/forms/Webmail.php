@@ -37,18 +37,11 @@ class Configuracao_Form_Webmail extends Zend_Form implements Interactive_Form_Im
 			  ->addValidator(new Zend_Validate_Int())
 			  ->addDecorators($this->_decorator);
 		
-		$ssl = new Zend_Form_Element_Select("ssl");
-		$ssl->options = array(false=>"Inativo",true=>"Ativo");
-		$ssl->setRequired()
-			->addDecorators($this->_decorator)
-			->setAttrib("class", "small")
-			->setLabel("SSL:");
-		
-		$theme = new Zend_Form_Element_Text("theme");
-		$theme->setRequired()
+		$conta = new Zend_Form_Element_Text("conta");
+		$conta->setRequired()
+			  ->setLabel("Conta:")
 			  ->setAttrib("class", "small")
-			  ->addDecorators($this->_decorator)
-			  ->setLabel("Tema:");
+			  ->addDecorators($this->_decorator);
 		
 		$submit = new Zend_Form_Element_Submit("submit");
 		$submit->setLabel("Salvar")
@@ -63,7 +56,7 @@ class Configuracao_Form_Webmail extends Zend_Form implements Interactive_Form_Im
 				array('Form',array('class'=>'style'))
 		));
 		
-		$this->addElements(array($host, $usuario, $senha, $porta, $ssl, $theme, $id,$submit));
+		$this->addElements(array($host, $usuario, $senha, $porta, $conta, $id, $submit));
 		
 		
 	}
