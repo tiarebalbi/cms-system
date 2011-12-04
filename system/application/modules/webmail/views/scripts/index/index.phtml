@@ -1,4 +1,67 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Index</b> and script/action name <b>index</b></p>
+<div class="grid_12">
+	<h1>Webmail</h1>
+	<p>Lista de e-mail cadastrados</p>
+</div>
+<div class="grid_12">
+	<?php foreach ($this->notificacao as $msg) :?>
+		<div class="alert success flashMessage"><?php echo $msg; ?></div>
+	<?php endforeach;?>
+	<?php if(!empty($this->erro)) :?>
+		<div class="alert error flashMessage"><?php echo $this->erro; ?></div>
+	<?php endif;?>
+</div>
+<div class="grid_12">
+	<a class="button" href="<?php echo $this->url(array("module"=>"webmail","controller"=>"index","action"=>"novo")); ?>">Nova Conta</a>
+</div>
+
+<div class="grid_12">
+	<div class="block-border">
+		<div class="block-header"> <h1>Informações</h1><span></span> </div> 
+		<div class="block-content">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>E-Mail</th>
+						<th>Espaço</th>
+						<th style="width: 250px">Utilização</th>
+						<th width="250px"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($this->resultado as $valor) :?>
+						<tr>
+							<td><?php echo $valor["email"];?></td>
+							<td><?php echo $valor["humandiskused"];?>/<?php echo $valor["humandiskquota"];?></td>
+							<td>
+								<div class="progress-bar">
+									<span class="status" style="width: <?php echo $valor["diskusedpercent"];?>%;"><?php echo $valor["diskusedpercent"];?>%</span>
+								</div>
+							</td>
+							<td>
+								<a class="button-table view" href="<?php echo 
+										$this->url(array("module"=>"webmail",
+														 "controller"=>"index",
+														 "action"=>"editar-senha",
+														 "id"=>$valor["user"],
+														 "dominio"=>$valor["domain"]),NULL, true);?>">
+									Editar Senha
+								</a>
+								<a class="button-table edit" href="<?php echo 
+										$this->url(array("module"=>"webmail",
+														 "controller"=>"index",
+														 "action"=>"editar-espaco",
+														 "id"=>$valor["user"],
+														 "dominio"=>$valor["domain"]),NULL, true);?>">
+									Editar Espaço
+								</a>
+								<a class="button-table delete" href="<?php echo $this->url(array("module"=>"webmail","controller"=>"index","action"=>"excluir","id"=>$valor["user"]),NULL, true);?>">
+									Excluir
+								</a>
+							</td>
+						</tr>
+					<?php endforeach;?>					
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>

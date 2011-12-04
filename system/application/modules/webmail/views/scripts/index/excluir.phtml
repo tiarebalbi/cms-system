@@ -1,0 +1,29 @@
+<div class="grid_12">
+	<h1>Webmail</h1>
+	<p>Exclusão de Conta de E-Mail</p>
+</div>
+<div class="grid_12">
+	<a class="button" href="<?php echo $this->url(array("module"=>"webmail","controller"=>"index","action"=>"index"), NULL, true); ?>">Voltar</a>
+	<?php if(!empty($this->erro)) :?>
+		<div class="alert error flashMessage"><?php echo $this->erro; ?></div>
+	<?php endif;?>
+</div>
+
+
+<div class="grid_12">
+	<div class="block-border">
+		<div class="block-header"> <h1>Confirmação de Dados</h1><span></span> </div> 
+		<div class="block-content">
+		
+			<p style="margin-bottom: 20px; height: 30px;">
+				<span class="alert warning">Caso você confirme esta exclusão todos os e-mail da conta serão apagados.</span>
+			</p>
+		
+			<ul class="block-list">
+				<li><span>E-Mail:</span> <?php echo $this->usuario;?>@<?php echo $this->dominio;?></li>
+			</ul>
+			<h3>Você confirma a exclusão deste registro ?</h3>
+			<?php echo $this->form;?>
+		</div>
+	</div>
+</div>

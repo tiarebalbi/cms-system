@@ -14,7 +14,7 @@
 				<li><span>Host:</span> <?php echo $this->info["host"];?></li>
 				<li><span>Usuário:</span> <?php echo $this->info["usuario"];?></li>
 				<li><span>Porta:</span> <?php echo $this->info["porta"];?></li>
-				<li><span>Tema:</span> <?php echo $this->info["theme"];?></li>
+				<li><span>Status:</span> <?php echo ($this->info["status"] == 1 ? "Ativo" : "Inativo");?></li>
 			</ul>
 			<h3>Você confirma a exclusão deste registro ?</h3>
 			<a class="button" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"webmail","action"=>"excluir","checked"=>true));?>">

@@ -10,6 +10,7 @@ class Configuracao_Model_Webmail extends Interactive_Db_Capsule
 	protected $_porta;
 	protected $_status;
 	protected $_conta;
+	protected $_dominio;
 	
 	/**
 	 * @return the $_id
@@ -107,6 +108,20 @@ class Configuracao_Model_Webmail extends Interactive_Db_Capsule
 	public function setConta($_conta) {
 		$this->_conta = $_conta;
 	}
+	/**
+	 * @return the $_dominio
+	 */
+	public function getDominio() {
+		return $this->_dominio;
+	}
+
+	/**
+	 * @param field_type $_dominio
+	 */
+	public function setDominio($_dominio) {
+		$this->_dominio = $_dominio;
+	}
+
 
 
 	

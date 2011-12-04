@@ -11,6 +11,8 @@ class Configuracao_Form_Webmail extends Zend_Form implements Interactive_Form_Im
 		$id = new Zend_Form_Element_Hidden("id");
 		$id->addDecorators($this->_decorator);
 		
+		$status = new Zend_Form_Element_Hidden("status");
+		
 		$host = new Zend_Form_Element_Text("host");
 		$host->setRequired()
 			 ->addDecorators($this->_decorator)
@@ -43,6 +45,12 @@ class Configuracao_Form_Webmail extends Zend_Form implements Interactive_Form_Im
 			  ->setAttrib("class", "small")
 			  ->addDecorators($this->_decorator);
 		
+		$dominio = new Zend_Form_Element_Text("dominio");
+		$dominio->setRequired()
+				->setLabel("Domínio do Cliente:")
+				->setAttrib("class", "small")
+				->addDecorators($this->_decorator);
+		
 		$submit = new Zend_Form_Element_Submit("submit");
 		$submit->setLabel("Salvar")
 			   ->setAttrib("class","button")
@@ -56,7 +64,7 @@ class Configuracao_Form_Webmail extends Zend_Form implements Interactive_Form_Im
 				array('Form',array('class'=>'style'))
 		));
 		
-		$this->addElements(array($host, $usuario, $senha, $porta, $conta, $id, $submit));
+		$this->addElements(array($host, $usuario, $senha, $porta, $conta, $dominio, $id, $status, $submit));
 		
 		
 	}

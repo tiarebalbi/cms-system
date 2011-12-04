@@ -53,13 +53,34 @@
 					<label>Nova Conta</label>
 					<module>webmail</module>
 					<controller>index</controller>
-					<action>cadastrar</action>
+					<action>novo</action>
 				</novaconta>
 				<listaconta>
 					<label>Lista de Conta(s)</label>
 					<module>webmail</module>
 					<controller>index</controller>
-					<action>listar</action>
+					<action>index</action>
+					
+					<pages>
+						<editarsenha>
+							<label>Alteração de Senha</label>
+							<module>webmail</module>
+							<controller>index</controller>
+							<action>editar-senha</action>
+						</editarsenha>
+						<excluir>
+							<label>Exclusão de Conta de E-Mail</label>
+							<module>webmail</module>
+							<controller>index</controller>
+							<action>excluir</action>
+						</excluir>
+						<editarespaco>
+							<label>Alteração de Espaço</label>
+							<module>webmail</module>
+							<controller>index</controller>
+							<action>editar-espaco</action>
+						</editarespaco>
+					</pages>
 				</listaconta>
 			</pages>
 		</webmail>

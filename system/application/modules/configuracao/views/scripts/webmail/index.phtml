@@ -22,8 +22,8 @@
 						<th>Servidor</th>
 						<th>Usuário</th>
 						<th>Porta</th>
-						<th>Tema</th>
-						<th width="120px"></th>
+						<th>Status</th>
+						<th width="180px"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -33,8 +33,13 @@
 							<td><?php echo $valor->host;?></td>
 							<td><?php echo $valor->usuario;?></td>
 							<td><?php echo $valor->porta?></td>
-							<td><?php echo $valor->theme?></td>
+							<td><?php echo ($valor->status == 1 ? "Ativo" : "Inativo");?></td>
 							<td>
+								<?php if($valor->status == 0):?>
+								<a class="button-table view" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"webmail","action"=>"status","id"=>$valor->id),NULL, true);?>">
+									Ativar
+								</a>
+								<?php endif;?>
 								<a class="button-table edit" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"webmail","action"=>"editar","id"=>$valor->id),NULL, true);?>">
 									Editar
 								</a>
