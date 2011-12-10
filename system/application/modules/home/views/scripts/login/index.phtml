@@ -1,0 +1,23 @@
+<?php foreach ($this->notificacao as $msg) :?>
+	<?php foreach ($msg as $tipo=>$info): ?>
+		<div class="alert <?php echo $tipo;?>">	
+			<?php if(is_array($info)):?>	
+				<?php foreach ($info as $mensagem): ?>
+					<?php echo $mensagem; ?>
+				<?php  endforeach;?>		
+			<?php else: ?>
+				<?php echo $info;?>
+			<?php endif;?>	
+		</div>	
+	<?php  endforeach;?>
+<?php endforeach;?>
+
+<div class="block-border">
+	<div class="block-header"><h1>Login</h1></div>
+	<div class="block-content">
+		<?php echo $this->form;?>		
+	</div>
+	<div class="block-footer">
+		<a class="button">Você esqueceu sua senha ?</a>
+	</div>
+</div>

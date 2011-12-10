@@ -1,0 +1,40 @@
+<div class="grid_12">
+	<h1>Minha Conta</h1>
+	<p>Alteração de imagem do Perfil</p>
+</div>
+
+<div class="grid_12">
+	<?php foreach ($this->notificacao as $msg) :?>
+		<div class="alert success flashMessage"><?php echo $msg; ?></div>
+	<?php endforeach;?>
+</div>
+
+<div class="grid_12">
+	<div class="block-border">
+		<div class="block-header"> <h1>Informações</h1><span></span> </div> 
+		<div class="block-content">
+			
+			<div class="box">
+				<?php echo $this->form;?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php if (!empty($this->foto)) :?>
+
+<div class="grid_12">
+	<h1>Configuração da Imagem</h1>
+	<p>Alteração de imagem do Perfil</p>
+</div>
+
+<div class="grid_12">
+	<div class="block-border">
+		<div class="block-header"> <h1>Configuração da Imagem</h1><span></span> </div> 
+		<div class="block-content">
+			
+			<img alt="Foto" src="<?php echo $this->baseUrl("upload/profile/" . $this->foto);?>" id="crop">
+			
+		</div>
+	</div>
+</div>
+<?php endif; ?>

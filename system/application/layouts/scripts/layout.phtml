@@ -12,16 +12,16 @@
 		<div id="logo"></div>
 		<div class="divider-header divider-vertical"></div>
 		<div id="options">
-			<ul class="toolbox-header">
-				<li><a class="toolbox-action tooltip" href="javascript:void(0);"
-					title="Minha Conta"><span class="i-24-user-business"></span></a></li>
-				<li><a class="toolbox-action tooltip" href="javascript:void(0);"
-					title="Backup"><span class="i-24-database"></span></a></li>
-			</ul>
+<!-- 			<ul class="toolbox-header"> -->
+<!-- 				<li><a class="toolbox-action tooltip" href="javascript:void(0);" -->
+<!-- 					title="Minha Conta"><span class="i-24-user-business"></span></a></li> -->
+<!-- 				<li><a class="toolbox-action tooltip" href="javascript:void(0);" -->
+<!-- 					title="Backup"><span class="i-24-database"></span></a></li> -->
+<!-- 			</ul> -->
 		</div>
 		<div id="user-info">
 			<p>
-				<a href="javascript:void(0);" class="button red">Logout</a>
+				<a href="<?php echo $this->url(array("module"=>"home","controller"=>"login","action"=>"logout"), NULL, true);?>" class="button red">Logout</a>
 			</p>
 		</div>
 	</div>
@@ -52,7 +52,7 @@
 			<img class="img-left framed" alt="Hello"
 				src="<?php echo $this->baseUrl("img/misc/avatar_small.png");?>">
 			<h3>Bem Vindo Sr(a):</h3>
-			<p>Tiarê Balbi Bonamini</p>
+			<p><?php echo Interactive_Security_Auth_Manager::getIdentity("administrador")->nome; ?></p>
 		</div>
 		<div id="nav">
 			<?php echo $this->navigation()->menu()->renderMenu(null,array('maxDepth'=>1)); ?>

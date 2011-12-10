@@ -31,8 +31,20 @@
             <controllerFile controllerName="Error">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Account">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="imagem"/>
+            </controllerFile>
+            <controllerFile controllerName="Login">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="logout"/>
+              <actionMethod actionName="remember"/>
+            </controllerFile>
           </controllersDirectory>
-          <formsDirectory enabled="false"/>
+          <formsDirectory>
+            <formFile formName="Imagem"/>
+            <formFile formName="Login"/>
+          </formsDirectory>
           <layoutsDirectory enabled="false">
             <layoutScriptsDirectory enabled="false"/>
           </layoutsDirectory>
@@ -44,6 +56,21 @@
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Error">
                 <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Account">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Account">
+                <viewScriptFile forActionName="imagem"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Login">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Login">
+                <viewScriptFile forActionName="logout"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Login">
+                <viewScriptFile forActionName="remember"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>
@@ -105,9 +132,17 @@
               <actionMethod actionName="index"/>
               <actionMethod actionName="listar"/>
               <actionMethod actionName="senha"/>
+              <actionMethod actionName="editar"/>
+              <actionMethod actionName="novo"/>
+              <actionMethod actionName="excluir"/>
             </controllerFile>
           </controllersDirectory>
-          <formsDirectory enabled="false"/>
+          <formsDirectory>
+            <formFile formName="EditarSenha"/>
+            <formFile formName="EditarEspaco"/>
+            <formFile formName="NovaConta"/>
+            <formFile formName="Exclusao"/>
+          </formsDirectory>
           <layoutsDirectory enabled="false">
             <layoutScriptsDirectory enabled="false"/>
           </layoutsDirectory>
@@ -122,6 +157,15 @@
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Index">
                 <viewScriptFile forActionName="senha"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Index">
+                <viewScriptFile forActionName="editar"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Index">
+                <viewScriptFile forActionName="novo"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Index">
+                <viewScriptFile forActionName="excluir"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>
@@ -144,6 +188,7 @@
               <actionMethod actionName="cadastrar"/>
               <actionMethod actionName="editar"/>
               <actionMethod actionName="excluir"/>
+              <actionMethod actionName="status"/>
             </controllerFile>
             <controllerFile controllerName="Usuarios">
               <actionMethod actionName="index"/>
@@ -235,6 +280,40 @@
               <viewControllerScriptsDirectory forControllerName="Analytics">
                 <viewScriptFile forActionName="cadastrar"/>
               </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Webmail">
+                <viewScriptFile forActionName="status"/>
+              </viewControllerScriptsDirectory>
+            </viewScriptsDirectory>
+            <viewHelpersDirectory/>
+            <viewFiltersDirectory/>
+          </viewsDirectory>
+        </moduleDirectory>
+        <moduleDirectory moduleName="home">
+          <apisDirectory enabled="false"/>
+          <configsDirectory enabled="false"/>
+          <controllersDirectory>
+            <controllerFile controllerName="Login">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="logout"/>
+              <actionMethod actionName="forgot"/>
+            </controllerFile>
+          </controllersDirectory>
+          <formsDirectory enabled="false"/>
+          <layoutsDirectory enabled="false">
+            <layoutScriptsDirectory enabled="false"/>
+          </layoutsDirectory>
+          <modelsDirectory/>
+          <viewsDirectory>
+            <viewScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Login">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Login">
+                <viewScriptFile forActionName="logout"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Login">
+                <viewScriptFile forActionName="forgot"/>
+              </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>
             <viewFiltersDirectory/>
@@ -296,6 +375,15 @@
               <testApplicationControllerFile forControllerName="Error">
                 <testApplicationActionMethod forActionName="index"/>
               </testApplicationControllerFile>
+              <testApplicationControllerFile forControllerName="Account">
+                <testApplicationActionMethod forActionName="index"/>
+                <testApplicationActionMethod forActionName="imagem"/>
+              </testApplicationControllerFile>
+              <testApplicationControllerFile forControllerName="Login">
+                <testApplicationActionMethod forActionName="index"/>
+                <testApplicationActionMethod forActionName="logout"/>
+                <testApplicationActionMethod forActionName="remember"/>
+              </testApplicationControllerFile>
             </testApplicationControllerDirectory>
           </testApplicationModuleDirectory>
           <testApplicationModuleDirectory forModuleName="configuracao">
@@ -312,6 +400,7 @@
                 <testApplicationActionMethod forActionName="cadastrar"/>
                 <testApplicationActionMethod forActionName="editar"/>
                 <testApplicationActionMethod forActionName="excluir"/>
+                <testApplicationActionMethod forActionName="status"/>
               </testApplicationControllerFile>
               <testApplicationControllerFile forControllerName="Usuarios">
                 <testApplicationActionMethod forActionName="index"/>
@@ -343,6 +432,18 @@
                 <testApplicationActionMethod forActionName="index"/>
                 <testApplicationActionMethod forActionName="listar"/>
                 <testApplicationActionMethod forActionName="senha"/>
+                <testApplicationActionMethod forActionName="editar"/>
+                <testApplicationActionMethod forActionName="novo"/>
+                <testApplicationActionMethod forActionName="excluir"/>
+              </testApplicationControllerFile>
+            </testApplicationControllerDirectory>
+          </testApplicationModuleDirectory>
+          <testApplicationModuleDirectory forModuleName="home">
+            <testApplicationControllerDirectory>
+              <testApplicationControllerFile forControllerName="Login">
+                <testApplicationActionMethod forActionName="index"/>
+                <testApplicationActionMethod forActionName="logout"/>
+                <testApplicationActionMethod forActionName="forgot"/>
               </testApplicationControllerFile>
             </testApplicationControllerDirectory>
           </testApplicationModuleDirectory>

@@ -36,6 +36,5 @@ class Configuracao_Model_UsuariosMapper extends Interactive_Db_Mapper implements
 	}
 
 
-
 }
 

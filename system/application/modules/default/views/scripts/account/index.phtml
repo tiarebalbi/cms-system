@@ -1,4 +1,22 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Account</b> and script/action name <b>index</b></p>
+<div class="grid_12">
+	<h1>Minha Conta</h1>
+	<p>Informações Cadastrais da sua Conta</p>
+</div>
+
+<div class="grid_12">
+	<div class="block-border">
+		<div class="block-header"> <h1>Informações</h1><span></span> </div> 
+		<div class="block-content">
+			<p style="display: block; margin-bottom: 10px; height: 30px;">
+				<a class="button" href="<?php echo $this->url(array("module"=>"configuracao","controller"=>"usuarios","action"=>"editar", "id"=>$this->informacoes["id"])); ?>">Alterar Informações</a>
+			</p>
+			<ul class="block-list">
+				<li><b>Nome Completo:</b> <?php echo $this->informacoes["nome"];?></li>
+				<li><b>E-Mail:</b> <?php echo $this->informacoes["email"];?></li>
+				<li><b>Data de Nascimento:</b> <?php echo $this->data($this->informacoes["nascimento"], "dd/MM/yyyy")?></li>
+				<li><b>Usuário:</b> <?php echo $this->informacoes["login"];?></li>
+				<li><b>Status:</b> <?php echo ($this->informacoes["status"] == 1 ? "Ativo" : "Inativo");?></li>
+			</ul>
+		</div>
+	</div>
 </div>

@@ -1,0 +1,19 @@
+<?php echo $this->doctype();?>
+<html>
+<head>
+	<?php echo $this->headTitle();?>
+	<meta charset=utf-8>
+	<link	href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css' />
+	<?php echo $this->headLink();?>
+	<?php echo $this->headScript()->prependFile($this->baseUrl("js/library/jquery/jquery-1.7.min.js"),'text/javascript');?>
+</head>
+<body class="login-page">
+	
+	<div class="container">
+		<div class="login-box">
+			<?php echo $this->layout()->content; ?>
+		</div>
+	</div>
+	
+</body>
+</html>

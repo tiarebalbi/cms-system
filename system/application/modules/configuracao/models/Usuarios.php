@@ -13,6 +13,7 @@ class Configuracao_Model_Usuarios extends Interactive_Db_Capsule
 	protected $_nascimento;
 	protected $_grupo;
 	protected $_status;
+	protected $_foto; 
 	
 	/**
 	 * @return the $_id
@@ -153,6 +154,20 @@ class Configuracao_Model_Usuarios extends Interactive_Db_Capsule
 	public function setStatus($_status) {
 		$this->_status = $_status;
 	}
+	/**
+	 * @return the $_foto
+	 */
+	public function getFoto() {
+		return $this->_foto;
+	}
+
+	/**
+	 * @param field_type $_foto
+	 */
+	public function setFoto($_foto) {
+		$this->_foto = $_foto;
+	}
+
 
 	
 }

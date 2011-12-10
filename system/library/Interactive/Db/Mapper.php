@@ -89,7 +89,6 @@ abstract class Interactive_Db_Mapper
     
     protected function _fetchAll($campos, $nameObjeto, $where, $ordem, $limite)
     {
-    	
     	$resultado = $this->_getDbTable()->fetchAll($where, $ordem, $limite);
    		$info = array();
    		

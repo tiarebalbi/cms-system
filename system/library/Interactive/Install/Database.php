@@ -47,7 +47,18 @@ class Interactive_Install_Database {
 		
 			$registry = Zend_Registry::getInstance();
 			$registry->set('db', $db);
-		
+			
+			$config = array(
+					'name'           => 'sys_session',
+					'primary'        => 'id',
+					'modifiedColumn' => 'modificado',
+					'dataColumn'     => 'informacoes',
+					'lifetimeColumn' => 'lifetime'
+			);
+			
+			Zend_Session::setSaveHandler(new Zend_Session_SaveHandler_DbTable($config));
+			Zend_Session::start();
+			
 			return true;
 			
 		}catch( Exception $e){
